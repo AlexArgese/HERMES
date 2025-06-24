@@ -11,9 +11,8 @@ import {
   Legend
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import '../pages/Results.css'; // adjust path if your CSS lives elsewhere
+import '../pages/Results.css';
 
-// 1) register the chart.js modules
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -24,20 +23,17 @@ ChartJS.register(
   Legend
 );
 
-// 2) default font family to match the rest of the site
 ChartJS.defaults.font.family = `"Abel", sans-serif`;
 
 export default function QualityControlAccuracyChart() {
-  // the pDSC thresholds
   const thresholds = ['0.7', '0.8', '0.9'];
 
-  // build the data object
   const data = {
     labels: thresholds,
     datasets: [
       {
         label: 'Galati et al.',
-        data: [55, 41, 27],            // accuracy % at each threshold
+        data: [55, 41, 27],   
         borderColor: '#3498db',
         pointBackgroundColor: '#3498db',
         tension: 0.3,
@@ -65,7 +61,6 @@ export default function QualityControlAccuracyChart() {
     ]
   };
 
-  // chart configuration
   const options = {
     responsive: true,
     maintainAspectRatio: false,

@@ -13,7 +13,6 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
-// registra i moduli di Chart.js
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -24,10 +23,8 @@ ChartJS.register(
 );
 
 export default function RefinementResults() {
-  // 1) i pDSC thresholds
   const thresholds = ['70','80','90'];
 
-  // 2) i dati per ciascun metodo e organo
   const prostateValues = {
     HERMES: [72, 79, 83],
     PostDAE: [53, 65, 52],
@@ -39,7 +36,6 @@ export default function RefinementResults() {
     cVAE:     [68, 71, 76]
   };
 
-  // 3) helper per costruire il data object
   const makeData = (values) => ({
     labels: thresholds,
     datasets: [
@@ -49,7 +45,6 @@ export default function RefinementResults() {
     ]
   });
 
-  // 4) opzioni comuni
   const options = {
     responsive: true,
     maintainAspectRatio: false,

@@ -13,7 +13,6 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
-// 1) registra i moduli Chart.js
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -27,21 +26,19 @@ ChartJS.register(
 ChartJS.defaults.font.family = '"Abel", sans-serif';
 
 export default function DSCCorrelationChart() {
-  // 2) dati grezzi (le correlazioni DSC da Tabella 1 in ordine)
-  const labels = [
-    'Heart-LV',
-    'Heart-MYO',
-    'Heart-RV',
-    'Prostate-PZ',
-    'Prostate-TZ',
-    'Prostate-Whole',
-    'Spleen-Whole',
-    'Liver-Whole',
-    'Brain-Whole'
-  ];
 
   const data = {
-    labels,
+    labels: [
+      'Heart-LV',
+      'Heart-MYO',
+      'Heart-RV',
+      'Prostate-PZ',
+      'Prostate-TZ',
+      'Prostate-Whole',
+      'Spleen-Whole',
+      'Liver-Whole',
+      'Brain-Whole'
+    ],
     datasets: [
       {
         label: 'nnQC',
@@ -78,7 +75,6 @@ export default function DSCCorrelationChart() {
     ]
   };
 
-  // stati per organo e modello selezionati
   const organKeys = Object.keys({
     Spleen: {},
     Prostate: {},
@@ -88,13 +84,10 @@ export default function DSCCorrelationChart() {
   const [selectedModel, setSelectedModel] = useState('Wang et al.');
   const chartRef = useRef(null);
 
-  // gestore click sulle linee (usando ref e getElementsAtEventForMode)
   const handleChartClick = (event) => {
     const chart = chartRef.current;
     if (!chart) return;
-    // ottieni elementi dataset premuti (dataset mode)
     const elements = chart.getElementsAtEventForMode(
-      // passiamo l'evento nativo MouseEvent
       event.nativeEvent,
       'dataset',
       { intersect: false },
@@ -110,7 +103,6 @@ export default function DSCCorrelationChart() {
     }
   };
 
-  // 3) opzioni di stile
   const options = {
     responsive: true,
     maintainAspectRatio: false,
