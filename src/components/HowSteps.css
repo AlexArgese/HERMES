@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Anta&display=swap');
+
+:root { --accent:#780000; }
+
+/*———————— header ————————*/
+.how-wrapper  { text-align:center; }
+.how-title    { font-family:'Anta',sans-serif; font-size:2.2rem; margin:0 0 .4rem; }
+.how-subtitle { font-size:1rem;  margin:0 0 2rem; }
+
+/*———————— viewport ————————*/
+.grid-viewport{
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+}
+.grid-viewport::-webkit-scrollbar{ display:none; }
+
+/*———————— rail —————————*/
+.grid-rail{
+  display:flex;
+  gap:80px;
+  position:relative;
+  padding:0;                 /* niente padding lato JS */
+}
+
+/* margine laterale più piccolo: 10 % viewport */
+.grid-rail::before,
+.grid-rail::after{
+  content:'';
+  flex:0 0 10vw;             /* cambia qui se vuoi più/meno spazio */
+}
+
+/*———————— colonna —————————*/
+.grid-col{
+  display:grid;
+  grid-template-rows:auto auto;
+  min-width:320px;
+  scroll-snap-align:center;
+  cursor:pointer;
+  position:relative;
+}
+
+/* barre verticali (mezzo gap = 40 px) */
+
+.grid-col::before{
+  content:'';
+  position:absolute;
+  top:0; bottom:0;
+  width:8px; background:var(--accent);
+}
+.grid-col::before{ left:-8px; }
+
+/*———————— card & cella —————————*/
+.grid-cell{ display:flex; position:relative; }
+
+.grid-cell:first-child .card{ height:340px; overflow:hidden; }
+
+/* barra orizzontale continua */
+.grid-cell:first-child::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:-100px; right:-100px;
+  height:6px;
+  background:var(--accent);
+  z-index:2;
+}
+
+/* card aderenti alle barre */
+.card{
+  margin:0;
+  background:#000;
+  flex:1;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:start;
+  text-align:center;
+  font-size:1.5em;
+  position:relative; z-index:1;
+}
+
+/* opacità step inattivi */
+.grid-col:not(.active) .card{ opacity:.45; transition:opacity .3s; }
+.grid-col.active .card   { opacity:1;    transition:opacity .3s; }
+
+/*———————— contenuti card —————————*/
+.badge{
+  align-self:flex-start;
+  background:var(--accent); color:#fff;
+  font-family:'Anta',sans-serif;
+  padding:.25rem .65rem; font-size:.9rem;
+}
+
+.grid-cell:first-child .content-card{
+  flex:1; display:flex; flex-direction:column;
+}
+.content-card{ border:2px solid var(--accent); padding:1em; }
+
+.card h3{ font-size:1.05rem; margin:0 0 .9rem; line-height:1.3; font-family:'Anta',sans-serif; }
+.card .dummy-text{ font-size:.9rem; margin:0; line-height:1.45; }
+
+.card img{ width:100%; border:2px solid var(--accent); margin:0; }
+
+.grid-cell:first-child .content-card ul{ margin-top:auto; }
+
+.card ul{ list-style:none; padding:0; margin:0; width:100%; }
+.card li{
+  font-size:.9rem; margin:0 0 .45rem; text-align:left;
+  display:flex; align-items:center; gap:.45rem;
+}
+.card li::before{
+  content:''; width:6px; height:6px;
+  background:var(--accent); transform:rotate(45deg);
+}
+.bullet-point{ display:flex; flex-direction:row; align-items:center; }
+
+/*———————— mobile —————————*/
+@media(max-width:640px){
+  .grid-col{ min-width:85vw; }
+}

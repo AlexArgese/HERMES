@@ -1,0 +1,590 @@
+/* ---------------  BASE & IMPOSTAZIONE (copiato) --------------- */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Anta&display=swap');
+
+:root {
+  --accent: #780000;
+  --bg: #000;
+  --fg: #fff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Abel", sans-serif;
+  margin: 0;
+}
+
+.nnqc-hero-title {
+  text-align: center;
+  padding: 1rem;
+}
+.nnqc-hero-title h1 {
+  font-family: "Silom", monospace;
+  font-size: clamp(2rem, 4.8vw, 3.6rem);
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+.nnqc-hero-title h2 {
+  font-family: "Anta", sans-serif;
+  font-size: 1.35rem;
+  margin-bottom: 3rem;
+}
+.nnqc-hero-title p {
+  max-width: 62ch;
+  margin-inline: auto;
+  font-size: 1.15rem;
+  line-height: 1.45;
+  color: #cfcfcf;
+}
+.accent {
+  border: 4px solid var(--accent);
+  margin: 0;
+}
+
+/* ------------ section-block standard ------------ */
+.section-block {
+  margin: 3rem 10rem;
+  opacity: .45;
+  transition: transform .3s, opacity .3s;
+}
+.section-block:hover {
+  transform: scale(1.03);
+  opacity: 1;
+}
+.section-header h2 {
+  font-family: "Anta", sans-serif;
+  font-size: 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  padding: .5rem 1rem;
+  margin: 0;
+  display: inline-block;
+}
+
+.section-header h4{
+    font-family: "Anta", sans-serif;
+    font-size: 1rem;
+    background: var(--accent);
+    color: #fff;
+    padding: .5rem 1rem;
+    margin: 0;
+    display: inline-block;
+  }
+.nnqc-section {
+  border: 2px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.nnqc-section h3 {
+  font-family: "Silom", monospace;
+  font-size: 1.55rem;
+  margin: 0 5% 2rem 5%;
+  text-align: center;
+  
+}
+.nnqc-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0 5%;
+  text-align: left;
+}
+
+
+/* ------------ HOW IT WORKS (interactive) ------------ */
+.nnqc-how {
+  gap: 2rem;
+}
+
+/* phase selector (Training / Inference) */
+.phase-selector {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+.phase-selector .select-box img {
+  width: 25em; /* o qualunque valore tu preferisca */
+  height: auto;
+  object-fit: cover;
+}
+
+/* module selector (small buttons) */
+.module-selector {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* select-box style (identico alla navbar) */
+.select-box {
+  position: relative;
+  border: 2px solid transparent;
+  background: #000;
+  color: #fff;
+  padding: .6rem 1rem;
+  font-family: 'Anta', sans-serif;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: border .2s, transform .2s;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  opacity: .5;
+}
+.select-box img {
+  width: 50%;
+  height: auto;
+  border: 2px solid var(--accent);
+}
+.select-box.small {
+  padding: .45rem 1rem;
+  font-size: 1rem;
+}
+.select-box:hover,
+.select-box.active {
+  border-color: var(--accent);
+  opacity: 1;
+}
+.select-box.active::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -2px;
+  width: 12px;
+  height: 6px;
+  background: var(--accent);
+}
+
+/* module details */
+.module-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.module-details img {
+  width: 360px;
+  border: 2px solid var(--accent);
+  flex: 0 0 auto;
+}
+.module-text {
+  flex: 1 1 300px;
+  text-align: center;
+  justify-content: center;
+}
+
+.module-header {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* WRAP GENERICO (Training & Inference) */
+.training-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+/* IMAGE HOTSPOT (unificato) */
+.image-hotspot {
+  position: relative;
+  width: 80%;
+  margin: 2rem auto;
+}
+.image-hotspot img.base {
+  display: block;
+  width: 100%;
+  filter: brightness(0.3);
+  border: 5px solid var(--accent);
+}
+
+.image-hotspot img.highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border: none;
+}
+.content-sel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 5%
+}
+.image-sel {
+    width: 30%;
+}
+
+.image-sel img {
+    display: block;      /* per togliere eventuali spazi bianchi sotto l’immagine */
+    width: 100%;         /* scalo sempre per riempire al 100% il .image-sel */
+    height: auto;        /* mantengo le proporzioni */
+}
+.content-toe-sel{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+    padding: 2rem 
+}
+.toe-sel {
+    width: 100%;
+}
+
+.toe-sel img {
+    display: block;      /* per togliere eventuali spazi bianchi sotto l’immagine */
+    width: 100%;         /* scalo sempre per riempire al 100% il .image-sel */
+    height: auto;        /* mantengo le proporzioni */
+  }
+
+/* HOTSPOT BUTTON (unificato) */
+.hotspot {
+  position: absolute;
+  background: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.hotspot:hover,
+.hotspot.active {
+  border-color: var(--accent);
+}
+.hotspot.active::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -2px;
+    width: 24px;
+    height: 10px;
+    background: var(--accent);
+    filter: brightness(1);
+}
+
+.image-hotspot img.base,
+.image-hotspot img.highlight {
+  box-sizing: border-box;
+}
+
+/* MODULE TEXT */
+.module-text {
+  flex: 1;
+  color: #ccc;
+  line-height: 1.6;
+}
+.module-text h4 {
+  margin: 0 0 .75rem;
+  font-family: "Anta", sans-serif;
+  color: #fff;
+  font-size: 1.3rem;
+}
+.module-text p {
+  margin: .5rem 0;
+}
+
+/* NAV, TABS ecc. */
+.nnqc-interactive {
+  color: #fff;
+  font-family: 'Abel', sans-serif;
+}
+.phase-tabs,
+.module-tabs,
+.sub-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.tab {
+  border: 2px solid transparent;
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+.tab.active {
+  border-color: var(--accent);
+  background: #222;
+}
+.content {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.left,
+.right {
+  flex: 1;
+}
+.preview {
+  width: 100%;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+}
+.sub-content {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* ========== WHY IT WORKS? ========== */
+.nnqc-why {
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+  }
+  /* fai in modo che entrambi i pannelli occupino 50% */
+  .nnqc-why,
+  .nnqc-why .fingerprints-box {
+    flex: 1;
+  }
+
+  .why-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 5%;
+  }
+  
+  /* LEFT PANEL */
+  .why-list .why-intro {
+    margin-bottom: 1rem;
+    color: #ccc;
+  }
+  .why-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 2rem;
+  }
+  .why-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .why-list li img {
+    width: 2rem;
+    height: auto;
+    margin-right: 0.75rem;
+    filter: brightness(1);
+  }
+  .why-list li span {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  .why-elenco {
+    width: 50%;
+    
+  }
+  
+  /* RIGHT PANEL — Fingerprints box */
+  .fingerprints-box {
+    display: flex;
+    flex-direction: column;
+   align-items: start;
+  }
+  .fingerprints-box h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #fff;
+  }
+  .fingerprints-box p {
+    margin: 0.75rem 0;
+    line-height: 1.5;
+    color: #ccc;
+  }
+  .nnqc-text-dsc {
+    text-align: center;
+  }
+  
+  .graph-dsc {
+    height: 400px;
+    background: #000;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .dsc-title2 {
+    display: flex;
+  }
+  .dsc-title-nav {
+    display: flex;
+    flex-direction: column;
+    font-family: "Anta", sans-serif;
+    align-items: center;
+  }
+
+  .dsc-title-nav p {
+    text-align: center;
+  }
+
+  .nav-links-dsc {
+    list-style: none;
+    margin: 1rem;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-links-dsc a {
+      text-decoration: none;
+      color: #fff;
+      padding: 0.5rem 0.75rem;
+      position: relative;
+      transition: color 0.2s;
+  }
+  .nav-links-dsc a.active,
+  .nav-links-dsc a:hover {
+    color: #fff;
+  }
+  
+  
+  /* BOX ROSSO intorno al link attivo */
+  .nav-links-dsc a.active {
+      border: 2px solid #780000;
+    }
+  
+  /* Piccolo quadratino in alto a sinistra */
+  .nav-links-dsc a.active::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: -2px;
+      width: 12px;
+      height: 6px;
+      background: #780000;
+    }
+
+    .dsc-image{
+        width: 150px;
+        height: auto;
+    }
+
+    .three-images {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 2rem;
+    }
+    
+    .nnqc-button {
+        background: #780000;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        transition: opacity 0.3s;
+        margin: 0 auto;
+        font-family: 'Anta', sans-serif;
+        margin-top: 2rem;
+        font-size: 1.3rem;
+
+      }
+      .nnqc-button:hover {
+        opacity: 0.8;
+      }
+    
+  /* Responsive sotto 900px: una colonna */
+  @media (max-width: 900px) {
+    .nnqc-why {
+      flex-direction: column;
+    }
+  }
+  
+
+/* responsive */
+@media (max-width: 900px) {
+  .section-block {
+    margin: 3rem 4vw;
+  }
+  .module-details img {
+    width: 100%;
+  }
+  .module-details {
+    flex-direction: column;
+  }
+  .training-wrap {
+    flex-direction: column;
+  }
+  .image-hotspot img.base,
+  .image-hotspot img.highlight {
+    width: 100%;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 📱  MOBILE / TABLET  –  si applica solo sotto i 768 px          */
+/* ──────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* ---------- blocchi generici con bordo rosso ---------- */
+    .section-block,
+    .section-block-inside        { margin: 2rem 1rem; opacity: 1; }
+  
+    /* ---------- NNQC  ------------------------------------- */
+  
+    /* hero title già ok: riduco solo margine sotto h2        */
+    .nnqc-hero-title h2          { margin-bottom: 2rem; }
+  
+    /* phase / module selector: metto immagini full-width      */
+    .phase-selector .select-box img,
+    .module-selector .select-box img {
+      width: 100%;
+      max-width: 280px;
+    }
+  
+    /* dettagli modulo in colonna                             */
+    .module-details             { flex-direction: column; align-items: center; }
+    .module-details img         { width: 100%; max-width: 320px; }
+  
+    /* training / inference wrap                              */
+    .training-wrap              { flex-direction: column; }
+  
+    /* image-hotspot prende tutto lo schermo                 */
+    .image-hotspot              { width: 100%; }
+  
+    /* content-sel & toe-sel verticali + immagini 100 %       */
+    .content-sel,
+    .content-toe-sel            { flex-direction: column; gap: 1.5rem; }
+    .image-sel,
+    .toe-sel                    { width: 100%; }
+  
+    /* WHY it works layout: stack elementi                    */
+    .nnqc-why                   { flex-direction: column; }
+    .why-list                   { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .why-elenco                 { width: 100%; }
+    .fingerprints-box           { width: 100%; }
+  
+    /* ---------- TRY-IT box -------------------------------- */
+    /* (avevi già una media-query a 800 px: qui integriamo)   */
+    .try-box                    { padding: 2rem 1rem; }
+    .try-content                { flex-direction: column; gap: 2rem; }
+  
+    /* ---------- RESULTS  ---------------------------------- */
+  
+    /* blocco principale                                        */
+    .results-section            { padding: 1.5rem 1rem; }
+  
+    /* righe immagine + testo in colonna                        */
+    .results-row                { flex-direction: column; gap: 1.5rem; }
+    .results-image img          { max-width: 100%; }
+  
+    /* grafici a barre uno sotto l’altro                       */
+    .bar-charts                 { flex-direction: column; gap: 1.5rem; }
+    .chart-container            { width: 100%; }
+  
+    /* three-images e fingerprint box                          */
+    .three-images-res           { flex-direction: column; gap: 1.5rem; }
+    .fingerprints-box-res       { width: 100%; align-items: center; text-align: center; }
+  
+    /* testi un filo più piccoli                               */
+    .results-text,
+    .nnqc-section p,
+    .module-text p,
+    .try-intro,
+    .why-list li span           { font-size: 1rem; }
+  }
+  /* ───────────────  FINE AGGIUNTE MOBILE  ──────────────────────── */
+  

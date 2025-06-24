@@ -1,0 +1,64 @@
+/* ——— contenitore complessivo ——— */
+.try-wrapper{
+    max-width:1200px;
+    margin:4rem auto 0;
+    padding:0 4vw;
+    color:#fff;
+    font-family:'Abel',sans-serif;
+  }
+  
+  /* testo introduttivo sopra il box */
+  
+  /* riquadro principale con bordo rosso */
+  .try-box{
+    position:relative;
+    border:3px solid var(--accent);
+    padding:3rem 2rem;
+  }
+  
+  /* etichetta rossa in alto a sinistra */
+  .try-badge{
+    position:absolute;
+    top:-3rem; left:0;
+    background:var(--accent);
+    padding:1rem 2rem;
+    font-family:'Anta',sans-serif;
+    font-size:1.5rem;
+    line-height:1.2;
+  }
+  
+  /* contenuto diviso in due colonne */
+  .try-content{
+    display:flex;
+    gap:3rem;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  
+  /* immagine dimostrativa */
+  .try-img{
+    flex:0 0 320px;
+    border:2px solid var(--accent);
+  }
+  .try-img img{ width:100%; display:block; }
+  
+  /* testo esplicativo a destra */
+  .try-text{
+    flex:1 1 300px;
+    font-size:1.1rem;
+    line-height:1.5;
+    text-align:center;
+  }
+  
+  /* layout mobile */
+  @media(max-width:800px){
+    .try-box{ padding:2.5rem 1.5rem; }
+    .try-content{ flex-direction:column; }
+    .try-img, .try-text{ flex:none; width:100%; }
+    .try-badge{
+      position:static;
+      margin-bottom:1.5rem;
+      display:inline-block;
+    }
+  }
+  

@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Anta:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Abel&display=swap');
+
+.home-page {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Abel', sans-serif;
+}
+
+/* Video */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+/* Section wrapper */
+.section-block {
+  margin: 3rem 10rem;
+  transition: transform 0.3s, color 0.3s;
+  opacity: 50%;
+}
+
+.section-block:hover{
+    opacity: 100%;
+    transform: scale(1.03);
+}
+
+/* Section title */
+.section-header h2 {
+  font-family: 'Anta', sans-serif;
+  font-size: 1.5rem;
+  background: #780000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin: 0; /* nessun margine tra header e section */
+  display: inline-block;
+}
+
+/* Content box */
+.info-section {
+  border: 2px solid #780000;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.info-section2 {
+  margin: 0;
+  padding: 2rem 15%;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  border: 2px solid #780000;
+}
+
+
+.news-section {
+  background-color: #000;
+  padding: 3rem 15%;
+}
+
+.news-list {
+  list-style: disc inside;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+.news-list li + li {
+  margin-top: 0.75rem;
+}
+
+.news-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.news-card {
+  color: #fff;
+  background-color: #780000;
+  border-left: 4px solid #fff;
+  padding: 1.25rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+}
+
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.news-date {
+  font-weight: bold;
+  font-family: 'Anta', sans-serif;
+}
+
+.news-text {
+  font-size: 1.1rem;
+  font-family: 'Abel', sans-serif;
+  margin: 1em 0 0 0;
+  text-align: left;
+}
+
+.news-badge {
+  background-color: #fff;
+  color: #780000;
+  font-size: 0.65rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  font-family: 'Anta', sans-serif;
+}
+
+
+/* “What is HERMES?” layout */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 3em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+}
+.features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.7rem;
+}
+.features-list img {
+  width: 24px;
+  height: 24px;
+}
+
+
+.info-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.info-writings{
+    padding: 0 2em ;
+    margin-right: 2em;
+}
+
+.info-illustration {
+  width: 100%;
+  max-width: 350px;
+  border: 2px solid #780000;
+}
+
+/* “Why does HERMES matter?” layout */
+.icon-grid {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+.icon-box {
+  flex: 1;
+  border: 2px solid #780000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.icon-box img {
+  width: 100%;
+  height: auto;
+}
+
+/* CTA */
+.cta-button {
+  background: #780000;
+  color: #fff;
+  font-family: 'Anta', sans-serif;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  transition: opacity 0.3s;
+}
+.cta-button:hover {
+  opacity: 0.8;
+}
+
+
+/* ——— WHY DOES HERMES MATTER ——— */
+.why-container {
+    border: 2px solid #780000;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .flow-diagram {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: self-start;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .flow-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .flow-label {
+    font-size: 1.7rem;
+  }
+  
+  .flow-item img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .flow-arrow {
+    font-size: 2rem;          /* freccia “→” */
+  }
+  
+  .flow-terminator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  
+  .vertical-line {
+    width: 1px;
+    height: 150px;
+    background: #fff;
+  }
+  
+  .hermes-label {
+    font-family: 'Anta', sans-serif;
+    font-size: 1.5rem;
+  }
+  
+
+  /* ──────────────────────────────────────────────────────────── */
+/* 📱  MOBILE / TABLET  –  nulla di quanto segue si applica    */
+/*     sopra i 768 px, così il tuo stile desktop resta intatto */
+/* ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* hero video compatto e full-width */
+  .video-container       { height: 45vh; }      /* da 60 → 45 vh */
+  .background-video      {
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;      /* elimina il translate desktop */
+  }
+
+  /* sezione generica */
+  .section-block         { margin: 2rem 1rem; opacity: 1; }
+
+  /* “What is HERMES?” -------------------------------------- */
+  .info-section          { flex-direction: column; padding: 1.5rem 1rem; text-align: center; }
+  .info-writings         { padding: 0; margin-right: 0; }
+  .features-list         { align-items: center; }
+  .info-illustration     { max-width: 260px; margin-top: 1.5rem; }
+
+  /* testo più leggibile su schermi piccoli */
+  .info-text             { font-size: 1rem; }
+
+  /* “Why does HERMES matter?” ------------------------------ */
+  .why-container         { padding: 1.5rem 1rem; }
+  .flow-diagram          { gap: 1rem; }
+  .flow-item img         { width: 80px; height: 80px; }
+  .flow-label            { font-size: 1.25rem; }
+
+  /* CTA & download button */
+  .cta-button            { font-size: 1.2rem; padding: 0.6rem 1.2rem; }
+  .nnqc-section p        { font-size: 1rem; }
+}

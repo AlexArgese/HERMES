@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Anta&display=swap');
+
+:root { --accent: #780000; }
+
+/* ——— wrapper ——— */
+.problem-page { background:#000; color:#fff; font-family:'Abel',sans-serif; }
+
+/* ——— titolo & sottotitolo ——— */
+.problem-title {
+  font-family:'Anta',sans-serif;
+  font-size:2.4rem; text-align:center; line-height:1.3;
+  margin:0 0 1.2rem;
+}
+.problem-title .initial { padding:0 1px; border:3px solid var(--accent); margin:0 1px; }
+.problem-subtitle { text-align:center; max-width:700px; margin:0 auto 3rem; line-height:1.5; font-size:1.2rem; }
+
+/* ——— blocchi sezione (stesso effetto Home) ——— */
+.problem-section {
+  display:flex; gap:3rem; align-items:center;
+  margin:3rem 10rem;
+  transition:transform .3s,opacity .3s;
+  opacity:.5;
+}
+.problem-section:hover { opacity:1; transform:scale(1.03); }
+.problem-section.reverse { flex-direction:row-reverse; }
+
+
+/* container titolo + testo (bordo rosso) */
+.problem-row { flex:1; display:flex; flex-direction:column; align-items: start;}
+.block-title {
+  font-family:'Anta',sans-serif;
+  background:var(--accent); color:#fff;
+  padding:.25rem .75rem; 
+  margin: 0;
+}
+
+.problem-text { border:2px solid var(--accent); padding:1.5rem; }
+.problem-text p { margin:0 0 .9rem; line-height:1.55; }
+
+/* immagini */
+.problem-img img { width:100%; max-width:380px; }
+
+/* freccia tra i blocchi */
+.down-arrow { text-align:center; font-size:2.2rem; color:#fff; line-height:1; }
+
+/* ——— summary finale ——— */
+.problem-summary { border:2px solid var(--accent); padding:2rem 1.5rem 2.5rem; text-align:center; width:100%; }
+.summary-title {
+  font-family:'Anta',sans-serif; background:var(--accent);
+  padding:.3rem .9rem; display:inline-block;
+  width: 30%;
+  margin: 0;
+}
+.summary-list {
+  list-style:none; display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(40%,1fr));
+  gap:1rem 2rem; margin:0 0 2rem; padding:0;
+}
+.summary-list li { display:flex; align-items:center; gap:.75rem; font-size: 1.2rem; justify-content: center;}
+.summary-list img { width:30px; height:30px; }
+.claim { font-size:1.3rem; margin:0 0 1.5rem; line-height:1.4; }
+.claim strong { font-family:'Anta',sans-serif; font-size:1.4rem; }
+
+.effect-sentence{display: flex; flex-direction: row; gap: 1em; font-size: 1.3em;}
+.new-effect  {height: auto; background: #780000; width: 5px;}
+.link-text {color: #fff; font-style: italic;}
+/* ——— responsive ——— */
+@media (max-width:768px){
+  .problem-section{ margin:2rem 1rem; flex-direction:column; }
+  .problem-section.reverse{ flex-direction:column; }
+  .problem-img img{ max-width:100%; }
+  .summary-list{ grid-template-columns:1fr 1fr; }
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* 📱  MOBILE / TABLET  –  solo fin sotto i 768 px             */
+/* ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* titolo & sottotitolo */
+  .problem-title     { font-size: 1.8rem; margin-bottom: 0.8rem; }
+  .problem-subtitle  { font-size: 1rem; padding: 0 1rem; }
+
+  /* blocchi */
+  .problem-section   { margin: 2rem 1rem; }
+  .problem-text      { padding: 1rem; }
+  .block-title       { font-size: 1.3rem; }
+
+  /* immagine sempre al 100 % */
+  .problem-img img   { max-width: 100%; height: auto; }
+
+  /* “↓” separatore un po’ più piccolo */
+  .down-arrow        { font-size: 1.6rem; }
+
+  /* summary finale */
+  .summary-title     { width: 100%; margin-bottom: 1rem; font-size: 1.4rem; }
+  .problem-summary   { padding: 1.5rem 1rem; }
+  .summary-list      { grid-template-columns: 1fr; gap: 1rem; }
+  .summary-list li   { font-size: 1rem; }
+  .claim             { font-size: 1.1rem; }
+
+  /* effetto frase verticale */
+  .effect-sentence   { flex-direction: column; gap: 0.6rem; font-size: 1.1rem; }
+}
