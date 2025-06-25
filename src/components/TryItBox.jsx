@@ -129,7 +129,7 @@ export default function TryItBox() {
           
 
           <div className="try-img" ref={imgRef}>
-          <h3 className="subtitle">Mask</h3>
+          <h3 className="subtitle">Predicted Mask</h3>
             <img
               src={STEPS[step].imgGT}
               alt="demo"
@@ -141,7 +141,7 @@ export default function TryItBox() {
           </div>
 
           <div className="try-img" ref={imgRef}>
-            <h3 className="subtitle">Ground Thruth</h3>
+            <h3 className="subtitle">Ground Truth</h3>
             <img
               src='/how_it_works/Ground_thruth.png'
               alt="demo"
